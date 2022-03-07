@@ -30,14 +30,47 @@ console.group("triangulos");
 //var perimetrot =  l1 + l2 + baset;
 //var areat =  (baset * alturat)/2;
 
-function perimetrotrinagulo (l1, l2, baset)
+function perimetrotrinagulo (l1)
 {
-    return l1 + l2 + baset;
+    return (l1 * 3);
 }
 
 function areatriangulo(baset, alturat)
 {
     return (baset * alturat)/2;
+}
+function alturadeltriangulo (ladoA, ladoB, ladoBase) 
+{
+    if (ladoA != ladoB)
+    {
+        console.error("Los lados a y b no son iguales");
+    }
+    else
+    {
+        //...
+    }
+}
+
+function alturaTrianguloIsosceles(grandeLadoA, grandeLadoB, grandeLadoBase)
+{
+    if (grandeLadoA != grandeLadoB)
+    {
+        console.error("los lados a y b no son iguales");
+    }
+    else
+    {
+        var trianguloPequenoLadoB = grandeLadoBase / 2;
+        var trianguloPequenoBase = grandeLadoA;
+
+        var trianguloPequenoLadoBCuadrado = trianguloPequenoLadoB * trianguloPequenoLadoB;
+        var trianguloPequenoBaseCuadrado = trianguloPequenoBase * trianguloPequenoLadoBase;
+
+        trianguloPequenoLadoA = Math.sqrt(trianguloPequenoBaseCuadrado - trianguloPequenoLadoBCuadrado);
+
+        var grandeAltura = trianguloPequenoLadoA;
+        return grandeAltura;
+    }
+    
 }
 
 //console.log("Los lados del triangulo miden " + l1 + "cm,", l2 + "cm,", baset + "cm");
@@ -84,6 +117,8 @@ console.groupEnd();
 
 //aqui interactuamos con el HTML
 
+//funcion cuadrado
+
 function calcularPerimetroCuadrado()
 {
     var input =document.getElementById("InputCuadrado")
@@ -95,9 +130,29 @@ function calcularPerimetroCuadrado()
 
 function calcularAreaCuadrado()
 {
-    var input =document.getElementById("InputCuadrado")
+    var input = document.getElementById("InputCuadrado")
     var value = input.value;
 
     var area = areacuadrado(value);
     alert(area);
 }
+
+function calcularAlturatriangulo()
+{
+    var input = document.getElementById("InputTriangulol")
+    var valor = input.value;
+    
+    var inputa = document.getElementById("InputTriangulol2")
+    var valora = inputa.value;
+
+    var inputb = document.getElementById("InputTriangulobase")
+    var valorb = inputb.value;
+
+    var altura = alturaTrianguloIsosceles(valor, valora, valorb)
+    alert(altura);
+}
+//funcion triangulo
+
+
+
+    
